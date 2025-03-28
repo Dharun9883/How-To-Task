@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+#London {background-color:red;}
+#Paris {background-color:green;}
+#Tokyo {background-color:blue;}
+#Oslo {background-color:orange;}
+</style>
+</head>
+<body>
+
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div id="ERODE" class="tabcontent">
+  <h1>Erode</h1>
+  <p>ERODE is the good city.</p>
+</div>
+
+<div id="chennimalai" class="tabcontent">
+  <h1>chennimalai</h1>
+  <p>chaennimalai is i ma livng city.</p> 
+</div>
+
+<div id="mullamparppu" class="tabcontent">
+  <h1>mullamparppu</h1>
+  <p>mullamparppu my office in the city.</p>
+</div>
+
+<div id="chennai" class="tabcontent">
+  <h1>chennai</h1>
+  <p>chennai is the capital of tamlnadu.</p>
+</div>
+
+<button class="tablink" onclick="openCity('Erode', this, 'red')" id="defaultOpen">Erode</button>
+<button class="tablink" onclick="openCity('chennimalai', this, 'green')">chennimalai</button>
+<button class="tablink" onclick="openCity('mullamparppu', this, 'blue')">mullamparppu</button>
+<button class="tablink" onclick="openCity('chennai', this, 'orange')">chennai</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
